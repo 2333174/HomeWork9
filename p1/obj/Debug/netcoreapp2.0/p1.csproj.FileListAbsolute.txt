@@ -1,0 +1,11 @@
+D:\ComputerWork\C#\HomeWork9\p1\bin\Debug\netcoreapp2.0\p1.deps.json
+D:\ComputerWork\C#\HomeWork9\p1\bin\Debug\netcoreapp2.0\p1.runtimeconfig.json
+D:\ComputerWork\C#\HomeWork9\p1\bin\Debug\netcoreapp2.0\p1.runtimeconfig.dev.json
+D:\ComputerWork\C#\HomeWork9\p1\bin\Debug\netcoreapp2.0\p1.dll
+D:\ComputerWork\C#\HomeWork9\p1\bin\Debug\netcoreapp2.0\p1.pdb
+D:\ComputerWork\C#\HomeWork9\p1\obj\Debug\netcoreapp2.0\p1.csprojAssemblyReference.cache
+D:\ComputerWork\C#\HomeWork9\p1\obj\Debug\netcoreapp2.0\p1.csproj.CoreCompileInputs.cache
+D:\ComputerWork\C#\HomeWork9\p1\obj\Debug\netcoreapp2.0\p1.AssemblyInfoInputs.cache
+D:\ComputerWork\C#\HomeWork9\p1\obj\Debug\netcoreapp2.0\p1.AssemblyInfo.cs
+D:\ComputerWork\C#\HomeWork9\p1\obj\Debug\netcoreapp2.0\p1.dll
+D:\ComputerWork\C#\HomeWork9\p1\obj\Debug\netcoreapp2.0\p1.pdb

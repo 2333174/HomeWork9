@@ -1,0 +1,364 @@
+﻿
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>【原创】主机不能访问虚拟机CentOS7中的站点 - 阿波罗任先生 - 博客园</title>
+<meta property="og:description" content="主机不能访问虚拟机CentOS7中的站点 虚拟机上装好了centos7，并配好了nginx+php+mysql，但是本机就是无法访问。具体情况如下1.本机能ping通虚拟机2.虚拟机也能ping通本机" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/CodingLife/bundle-CodingLife.css?v=g4Oce5UBaUn_FUwadcT09ICEg5NkULQGtUpNhTtrI8U1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/CodingLife/bundle-CodingLife-mobile.css?v=Xay8b9tTSw814nBzbOgvS6rrbcxrobMhvHJHdZAO9vI1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/apolloren/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/apolloren/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/apolloren/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'apolloren', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/apolloren/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/apolloren/">阿波罗任</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/apolloren/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E9%98%BF%E6%B3%A2%E7%BD%97%E4%BB%BB%E5%85%88%E7%94%9F">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/apolloren/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/apolloren/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 215&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 31</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/apolloren/p/9989752.html">【原创】主机不能访问虚拟机CentOS7中的站点</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>主机不能访问虚拟机CentOS7中的站点</p>
+<p>================================</p>
+<p>虚拟机上装好了centos7，并配好了nginx+php+mysql，但是本机就是无法访问。<br>具体情况如下<br>1.本机能ping通虚拟机<br>2.虚拟机也能ping通本机<br>3.虚拟机能访问自己的web &nbsp; &nbsp; 通过虚拟机IP也能访问自己的web</p>
+<p>4.本机无法访问虚拟己的web</p>
+<p>===============================</p>
+<p>考虑是防火墙、端口的问题</p>
+<p>===============================</p>
+<p>这里注意，centos7与6有不同，CentOS7默认的防火墙不是iptables,而是firewalle.</p>
+<p>是firewalle、、firewalle、、firewalle、、</p>
+<p>所以网上较多的解决办法 &nbsp;/etc/init.d/iptables网上的解法应该都是基于CentOS 6去实践</p>
+<p>==============================</p>
+<p>原因分析：</p>
+<p>原因：虚拟机开启了防火墙，</p>
+<p>解决办法：防火墙添加80端口，或者关闭虚拟机防火墙。</p>
+<p>==============================</p>
+<h1 id="centos-7-firewall-命令">Centos 7 firewall 命令：</h1>
+<p>查看已经开放的端口：</p>
+<pre name="code" class="prettyprint"><code class="hljs lasso has-numbering">firewall<span class="hljs-attribute">-cmd <span class="hljs-subst">--<span class="hljs-built_in">list<span class="hljs-attribute">-ports</span></span></span></span></code></pre>
+<p>开启端口</p>
+<pre name="code" class="prettyprint"><code class="hljs brainfuck has-numbering"><span class="hljs-comment">firewall<span class="hljs-literal">-<span class="hljs-comment">cmd <span class="hljs-literal">-<span class="hljs-literal">-<span class="hljs-comment">zone=public <span class="hljs-literal">-<span class="hljs-literal">-<span class="hljs-comment">add<span class="hljs-literal">-<span class="hljs-comment">port=80/tcp <span class="hljs-literal">-<span class="hljs-literal">-<span class="hljs-comment">permanent</span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<p>命令含义：</p>
+<p>–zone #作用域</p>
+<p>–add-port=80/tcp #添加端口，格式为：端口/通讯协议</p>
+<p>–permanent #永久生效，没有此参数重启后失效</p>
+<p>重启防火墙</p>
+<pre name="code" class="prettyprint"><code class="hljs avrasm has-numbering">firewall-cmd --reload <span class="hljs-preprocessor">#重启firewall
+systemctl stop firewalld<span class="hljs-preprocessor">.service <span class="hljs-preprocessor">#停止firewall
+systemctl disable firewalld<span class="hljs-preprocessor">.service <span class="hljs-preprocessor">#禁止firewall开机启动</span></span></span></span></span></code><a name="t1"></a><br><strong>firewall-cmd --state</strong> #查看默认防火墙状态（关闭后显示notrunning，开启后显示running）<br>============================================<br>只需4步得真知：<br>1、</pre>
+<pre name="code" class="prettyprint"><code class="hljs lasso has-numbering">firewall<span class="hljs-attribute">-cmd <span class="hljs-subst">--<span class="hljs-built_in">list<span class="hljs-attribute">-ports  #查看已经开放的端口：默认都没开，没有显示数据，命令行换行<br>2、</span></span></span></span></code></pre>
+<pre name="code" class="prettyprint"><code class="hljs brainfuck has-numbering"><span class="hljs-comment">firewall<span class="hljs-literal">-<span class="hljs-comment">cmd <span class="hljs-literal">-<span class="hljs-literal">-<span class="hljs-comment">zone=public <span class="hljs-literal">-<span class="hljs-literal">-<span class="hljs-comment">add<span class="hljs-literal">-<span class="hljs-comment">port=80/tcp <span class="hljs-literal">-<span class="hljs-literal">-<span class="hljs-comment">permanent    #开启80端口<br>3、</span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<pre name="code" class="prettyprint"><code class="hljs avrasm has-numbering">firewall-cmd --reload <span class="hljs-preprocessor">#重启firewall</span></code><br>4、</pre>
+<pre name="code" class="prettyprint"><code class="hljs lasso has-numbering">firewall<span class="hljs-attribute">-cmd <span class="hljs-subst">--<span class="hljs-built_in">list<span class="hljs-attribute">-ports  #查看已经开放的端口：   显示  80/tcp   就OK了<br><br>下面本机访问虚拟机网站就可以了。<br>===================================<br>下面说一下  centos7以下版本的防火墙设置<br></span></span></span></span></code></pre>
+<h1 id="centos-7-以下版本-iptables-命令">CentOS 7 以下版本 iptables 命令</h1>
+<p>如要开放80，22，8080 端口，输入以下命令即可</p>
+<pre name="code" class="prettyprint"><code class="hljs lasso has-numbering">/sbin/iptables <span class="hljs-attribute">-I INPUT <span class="hljs-attribute">-p tcp <span class="hljs-subst">--dport <span class="hljs-number">80 <span class="hljs-attribute">-j ACCEPT
+/sbin/iptables <span class="hljs-attribute">-I INPUT <span class="hljs-attribute">-p tcp <span class="hljs-subst">--dport <span class="hljs-number">22 <span class="hljs-attribute">-j ACCEPT
+/sbin/iptables <span class="hljs-attribute">-I INPUT <span class="hljs-attribute">-p tcp <span class="hljs-subst">--dport <span class="hljs-number">8080 <span class="hljs-attribute">-j ACCEPT</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre>
+<p>然后保存：</p>
+<pre name="code" class="prettyprint"><code class="hljs avrasm has-numbering">/etc/rc<span class="hljs-preprocessor">.d/init<span class="hljs-preprocessor">.d/iptables save</span></span></code></pre>
+<p>查看打开的端口：</p>
+<pre name="code" class="prettyprint"><code class="hljs avrasm has-numbering">/etc/init<span class="hljs-preprocessor">.d/iptables status</span></code></pre>
+<p>关闭防火墙&nbsp;<br>1） 永久性生效，重启后不会复原</p>
+<p>开启： chkconfig iptables on</p>
+<p>关闭： chkconfig iptables off</p>
+<p>2） 即时生效，重启后复原</p>
+<p>开启： service iptables start</p>
+<p>关闭： service iptables stop</p>
+<p>查看防火墙状态：&nbsp;service iptables status</p>
+<p>==================================</p>
+<p><strong>下面说下CentOS7和6的默认防火墙的区别</strong></p>
+<p>CentOS 7默认使用的是firewall作为防火墙，使用iptables必须重新设置一下</p>
+<p>1、直接关闭防火墙</p>
+<p>systemctl stop firewalld.service&nbsp;#停止firewall</p>
+<p>systemctl disable firewalld.service&nbsp;#禁止firewall开机启动</p>
+<p>2、设置&nbsp;iptables service</p>
+<p>yum -y install iptables-services</p>
+<p>如果要修改防火墙配置，如增加防火墙端口3306</p>
+<p>vi /etc/sysconfig/iptables&nbsp;</p>
+<p>增加规则</p>
+<p>-A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT</p>
+<p>保存退出后</p>
+<p>systemctl restart iptables.service&nbsp;#重启防火墙使配置生效</p>
+<p>systemctl enable iptables.service&nbsp;#设置防火墙开机启动</p>
+<p>最后重启系统使设置生效即可。</p>
+<p>systemctl start iptables.service&nbsp;#打开防火墙</p>
+<p>systemctl stop iptables.service #关闭防火墙</p>
+<p>=======================================</p>
+<p>下面说一下centos7安装 iptables</p>
+<p>CentOS7默认的防火墙不是iptables,而是firewalle.</p>
+<p>安装iptable&nbsp;iptable-service</p>
+<div class="cnblogs_code">
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+<pre>#先检查是否安装了iptables
+service iptables status
+#安装iptables
+yum&nbsp;install&nbsp;-y iptables
+#升级iptables
+yum update iptables 
+#安装iptables-services
+yum install iptables-services</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+</div>
+<p>禁用/停止自带的firewalld服务</p>
+<div class="cnblogs_code">
+<pre>#停止firewalld服务
+systemctl stop firewalld
+#禁用firewalld服务
+systemctl mask firewalld</pre>
+</div>
+<p>设置现有规则</p>
+<div class="cnblogs_code">
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+<pre>#查看iptables现有规则
+iptables -L -n
+#先允许所有,不然有可能会杯具
+iptables -P INPUT ACCEPT
+#清空所有默认规则
+iptables -F
+#清空所有自定义规则
+iptables -X
+#所有计数器归0
+iptables -Z
+#允许来自于lo接口的数据包(本地访问)
+iptables -A INPUT -i lo -j ACCEPT
+#开放22端口
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+#开放21端口(FTP)
+iptables -A INPUT -p tcp --dport 21 -j ACCEPT
+#开放80端口(HTTP)
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+#开放443端口(HTTPS)
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+#允许ping
+iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT
+#允许接受本机请求之后的返回数据 RELATED,是为FTP设置的
+iptables -A INPUT -m state --state &nbsp;RELATED,ESTABLISHED -j ACCEPT
+#其他入站一律丢弃
+iptables -P INPUT DROP
+#所有出站一律绿灯
+iptables -P OUTPUT ACCEPT
+#所有转发一律丢弃
+iptables -P FORWARD DROP</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+</div>
+<p>其他规则设定</p>
+<div class="cnblogs_code">
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+<pre>#如果要添加内网ip信任（接受其所有TCP请求）
+iptables -A INPUT -p tcp -s 45.96.174.68 -j ACCEPT
+#过滤所有非以上规则的请求
+iptables -P INPUT DROP
+#要封停一个IP，使用下面这条命令：
+iptables -I INPUT -s ***.***.***.*** -j DROP
+#要解封一个IP，使用下面这条命令:
+iptables -D INPUT -s ***.***.***.*** -j DROP</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+</div>
+<p>保存规则设定</p>
+<div class="cnblogs_code">
+<pre>#保存上述规则
+service iptables save</pre>
+</div>
+<p>开启iptables服务&nbsp;</p>
+<div class="cnblogs_code">
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+<pre>#注册iptables服务
+#相当于以前的chkconfig iptables on
+systemctl enable iptables.service
+#开启服务
+systemctl start iptables.service
+#查看状态
+systemctl status iptables.service</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+</div>
+<p>&nbsp;</p>
+<p>解决vsftpd在iptables开启后,无法使用被动模式的问题</p>
+<p>1.首先在/etc/sysconfig/iptables-config中修改或者添加以下内容</p>
+<div class="cnblogs_code">
+<pre>#添加以下内容,注意顺序不能调换
+IPTABLES_MODULES="ip_conntrack_ftp"
+IPTABLES_MODULES="ip_nat_ftp"</pre>
+</div>
+<p>2.重新设置iptables设置</p>
+<div class="cnblogs_code">
+<pre>iptables -A INPUT -m state --state  <strong>RELATED,</strong>ESTABLISHED -j ACCEPT</pre>
+</div>
+<p>&nbsp;</p>
+<p><strong>以下为完整设置脚本</strong></p>
+<div class="cnblogs_code">
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+<pre>#!/bin/sh
+iptables -P INPUT ACCEPT
+iptables -F
+iptables -X
+iptables -Z
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 21 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+iptables -P INPUT DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD DROP
+service iptables save
+systemctl restart iptables.service</pre>
+<div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"><a title="复制代码"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></span></div>
+<div class="cnblogs_code_toolbar">&nbsp;</div>
+</div>
+<pre name="code" class="prettyprint"><code class="hljs lasso has-numbering"><span class="hljs-attribute"><span class="hljs-subst"><span class="hljs-built_in"><span class="hljs-attribute">&nbsp;</span></span></span></span></code></pre>
+<pre name="code" class="prettyprint"><code class="hljs lasso has-numbering"><span class="hljs-attribute"><span class="hljs-subst"><span class="hljs-built_in"><span class="hljs-attribute">=========================================<br>原创，转载请注明出处！<br>阿波罗任先生<br><br></span></span></span></span></code></pre>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2018-11-20 16:30</span> <a href='https://www.cnblogs.com/apolloren/'>阿波罗任先生</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=9989752" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(9989752);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=383908,cb_entryId=9989752,cb_blogApp=currentBlogApp,cb_blogUserGuid='a395b1c5-b4fb-4c5d-d204-08d4ef52ecb5',cb_entryCreatedDate='2018/11/20 16:30:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2018 阿波罗任先生
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

@@ -1,0 +1,951 @@
+﻿<html>
+	<head>
+		<title>《计算机应用基础(下)》教学进度安排</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+		<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+		<meta content="FrontPage.Editor.Document" name="ProgId">
+		<base target="_blank">
+		<script src="jquery-1.4.2.min.js"></script>
+		<style></style>
+		<script>
+function fun(){
+	if( location.href.indexOf("cf.pku") >=0  ) return;
+	var w= window.open("about:blank","notice","HEIGHT=200,WIDTH=200" );
+	w.document.write("新的校内服务器开通了，请大家访问<a target=_blank onclick=close() href=http://cf.pku.cn/tds>cf.pku.cn/tds</a>");
+	//w.document.write("通知：12月26日的计算机课不讲课，同学们自学、复习。但本周照常上机。请同学们互相转告。");
+}
+
+
+var x = new Array();
+var i = 0;
+
+function whichweek()
+{
+	var now = new Date();
+	//now = new Date("2003/12/24")
+	for( i=0; i<x.length-1; i++ )
+		if( now>=x[i] && now<x[i+1]) return i;
+	return 0;
+}
+
+function scrol(lnk){
+	var w = whichweek();
+	if( w>0 ) w--; // make it a little up
+	lnk.href="#w" + w;
+	return false;
+}
+
+function openlink(lnk, w)
+{
+	if( w <= whichweek() )return true; 
+	lnk.href="#";
+	alert("Sorry,文件暂时无法打开。因为只能打开本周的媒体文件。")
+	return false;
+}
+
+function wk(){
+	var now = new Date();
+	//alert(now);
+	var first = new Date(2013,1,25); //注意月份
+	//alert(first);
+	return parseInt((now-first)/24/3600/1000/7);	
+}
+
+$(function(){
+
+	var w = wk();
+	var a=$("a");
+	a.each(function(){ 
+		var name=$(this).attr("name");
+		
+		if(name.substring(0,1)!="w") return;
+		
+		var idx = parseInt(name.substring(1));
+		//alert(idx);
+		if( idx!=w+1) return;
+		
+		var td = $(this).parent().next().next().next();
+		//alert(td.html());
+		//alert(tr.html());//filter("td:first-child")
+		//td.css("class","nodisplay");
+		
+		//td.html("&nbsp;");
+		td.parent().css("background-color","#ffddee");
+
+	});
+
+});
+		</script>
+	</head>
+	<body bgColor="white" onload="">
+		<center><a name="w0"></a>
+			<p><br>
+				<b>《计算机应用基础(下)》教学进度安排</b>
+			</p>
+			<!--<p>&nbsp;有关课件:<a href="http://cf.pku.cn/Courseware/VB/index.htm"><FONT color="#ff0066"><STRONG>Visual 
+							Basic课件</STRONG></FONT></a><FONT color="#ff0066"><STRONG>, </STRONG></FONT>
+				<a href="http://cf.pku.cn/courseware/net/WebPage/ASP_1.htm"><FONT color="#ff0066"><STRONG>ASP课件</STRONG></FONT></a>
+			-->
+			<p><A href="software/vb6.0.rar"><font size="-1">附:</font> <font color="red">VB6中文版</font>
+					<font size="-1">(仅限校内同学学习用，序列号用一长串1)</font></A>&nbsp; <A href="software/vb6-s.exe">
+					精简版</A> <A href="vbDoc/vb5help.zip"><font size="-1">附:VB中文帮助</font></A> <A href="software/vb6mousewheel.exe">
+					<font size="-1">支持VB鼠标滚轮的程序</font></A> <a href="http://wenku.baidu.com/view/6ac02b6bb84ae45c3b358cd9.html">
+					<font size="-1">VB6与win7的兼容问题</font></a>
+			&nbsp;
+			<p><font size="-1"><font color="red">注意：随时都在维护中，请注意最新的变化。</font><BR>
+					如果本站点<b><A href="http://cf.pku.cn/tds">http://cf.pku.cn/tds</A></b>不通，请试试备份站点：<b><A href="http://www.dstang.com/cf2">http://www.dstang.com/cf2</A></b>
+					<p><font size="-1">教学参考书1《Visual BASIC程序设计》丛书主编：卢湘鸿，编著：唐大仕 清华大学出版社 2003
+							<br>
+							教学参考书2《Visual Basic程序设计题解与实验指导》丛书主编：卢湘鸿，编著：唐大仕 清华大学出版社 2004
+							<br>
+							教学参考书3《Visual Basic大学教程》编著：Deitel 电子工业出版社 2003
+							<br>
+						</font>
+						<BR>
+						<FONT size="-1">主讲教师：唐大仕 <A href="mailto:dstang2000@263.net">dstang2000@263.net</A></FONT><!--&nbsp; QQ:351116463-->
+						<BR>
+					<p><font size="-1">辅导教师： 
+						程超 <A href="mailto:iclumsy@gmail.com">iclumsy@gmail.com</A> ftp://cf1:cf1@cf.pku.cn
+						<br>
+						纪晓康  <A href="mailto:jxk701@gmail.com">jxk701@gmail.com</A> ftp://cf2:cf2@cf.pku.cn
+						<br>
+						斯文骏 <A href="mailto:swj0066@gmail.com">swj0066@gmail.com</A> ftp://cf7:cf7@cf.pku.cn
+
+						<!--
+							涂锦辉 <A href="mailto:jinhuitu@gmail.com">jinhuitu@gmail.com</A> 
+							&nbsp; <A HREF="ftp://cf1:cf1@cf.pku.cn">ftp://cf1:cf1@cf.pku.cn</A>
+							<br>
+							刘光磊 <A href="mailto:pigscanfly@163.com">pigscanfly@163.com</A> &nbsp; <A HREF="ftp://cf2:cf2@cf.pku.cn">
+								ftp://cf2:cf2@cf.pku.cn</A>
+							<br>
+							谢水源 <A href="mailto:xsy2510@gmail.com">xsy2510@gmail.com</A> &nbsp; <A HREF="ftp://cf7:cf7@cf.pku.cn">
+								ftp://cf7:cf7@cf.pku.cn</A>
+						-->
+							<br>
+							<br>
+						</font>
+					<p><font color="red">签到及作业:http://wjtds.vicp.cc</font> <a href="http://wjtds.vicp.cc">由于原服务器坏了，新的服务器点击这里</a> 
+					<!--
+					<A href="../zj/zj1/homework.htm">1号机房</A>&nbsp;&nbsp;
+						<A href="../zj/zj2/homework.htm">2号机房</A>&nbsp;&nbsp; <A href="../zj/zj7/homework.htm">
+							7号机房</A> <a href="fenban.xls">分班及机位</a>
+					-->	
+					<!--		&nbsp;&nbsp; &nbsp;<A href="HomeworkSubmit.htm">作业提交方法</A>-->
+					<A href="HomeworkSubmitzhaoNotice.pdf">提交作业的一些注意事项</A>
+					<P>
+					</P>
+					<P>附：<A href="vbLab/vb_book_answer.rar">书上的习题参考答案</A>&nbsp;<A href="vbLab/vb_book_answer_err.txt">几个更正</A>&nbsp;<A href="dasai.pptx">有关计算机应用设计大赛</A>
+					</P>
+					<P>
+					<p> <!--<A href="cf_all.zip">下载所有讲义</A>&nbsp;&nbsp;--> <!--A onclick="scrol(this)" href="#" target="_self"><font color="red">本周的内容! 
+						new </font></A>
+			</FONT-->
+					<!--new!!! <a href="buchong.htm" target=_blank ><FONT color="#ff0066">补充材料</FONT></a>-->
+					<p>
+						<table style="FONT-SIZE: 10pt; BORDER-COLLAPSE: collapse" width="100%" border="1">
+							<tr>
+								<td width="22">
+									<P align="center">周次
+									</P>
+								</td>
+								<td width="37">日期
+								</td>
+								<td width="113">
+									<P align="center">&nbsp;讲课内容
+									</P>
+								</td>
+								<TD width="177">
+									<P align="center">重要概念
+									</P>
+								</TD>
+								<td width="377">
+									<P align="center">重点实习内容&nbsp;
+									</P>
+								</td>
+								<td width="159">
+									<P align="center">讲义下载、参考信息
+									</P>
+								</td>
+							</tr>
+							<tr>
+								<td width="22">1&nbsp;<a name="w1"></a></td>
+								<td width="37">2.27
+								</td>
+								<td width="113">序论</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										程序设计语言
+										<LI>
+										VB程序设计步骤
+										<LI>
+											VB开发环境
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<LI>
+										熟悉VB工作环境
+										<LI>
+											工程及窗体的保存与打开
+										</LI>
+									</UL>
+									<p></p>
+								</td>
+								<td width="159"><A href="vbLab/1.ppt">本次课的讲义</A></td>
+							</tr>
+							<tr>
+								<td width="22">2&nbsp;<a name="w2"></a>
+								</td>
+								<td width="37">3.6
+								</td>
+								<td width="113">VB核心概念
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										对象的属性/方法/事件
+										<LI>
+											事件驱动
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<LI>
+										2.4.2中的程序:按钮与文字
+										<LI>
+											例4-3:两个相同的文本框</LI>
+									</UL>
+								</td>
+								<td width="159"><A href="vbLab/1_2.ppt">前两次课讲义下载</A>
+									<br>
+									<A href="vbLab/1_2.rar">示例下载</A>
+									<br>
+									第1-2章的内容及习题
+								</td>
+							</tr>
+							<tr>
+								<td width="22">3&nbsp;<a name="w3"></a>
+								</td>
+								<td width="37">3.13
+								</td>
+								<td width="113">数据与运算
+									<p>常用函数</p>
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										数据类型
+										<LI>
+										常量的书写
+										<LI>
+										变量的定义
+										<LI>
+										运算符与表达式
+										<LI>
+										常用函数
+										<LI>
+											小专题：Excel函数与VB函数&nbsp;
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<P>&nbsp;</P>
+									<UL>
+										<LI>
+										例3-1:求解一元二次方程
+										<LI>
+											练习常用函数(可以在程序中用Print来显示一个式子的值，也可以按<STRONG>Ctrl+G打开“立即窗口”，然后用问号的方式来查看</STRONG> ，如<br>
+										? Sqr(2) 回车
+										<LI>
+											<SPAN style="BACKGROUND-COLOR: #00ff00">要提交的作业-1:</SPAN>以下几题选做一题：（1）编一个VB程序求解一元二次方程；（2）使用Excel来求解一元二次方程；（3）用Timer，Shape，Label, 
+											Image, PictureBox等控件实现变色、闪烁、移动等效果。<FONT color="#ff0000">作业提交方法见页顶</FONT>。</LI></UL>
+									<P></P>
+								</td>
+								<td width="159"><A href="vbLab/week03.zip">讲义、示例下载</A>
+									<p><A href="vbDoc/net_resource.doc">附：VB网络资源</A></p>
+									<p><A href="vbDoc/faq.doc">附：常见错误及解决</A></p>
+									<p><A href="vbDoc/vb5help.zip"><font size="-1">附:VB中文帮助</font></A> &nbsp;</p>
+									<p><A href="vbDoc/Excel2003_Function_Manual.doc"><font size="-1">附:Excel函数说明</font></A>
+										&nbsp;</p>
+									<p><A href="vbLab/Express.xls"><font size="-1">附:Excel函数示例</font></A> &nbsp;</p>
+									<p>第3章内容及习题</p>
+									<p><a href="dasai.pptx"><font color="red">关于计算机大赛</font></a>
+									&nbsp;&nbsp;<a href="http://c.pkucada.org/">其网站</a>	
+									</p>
+									<p></p>
+								</td>
+							</tr>
+							<tr>
+								<td width="22">4&nbsp;<a name="w4"></a>
+								</td>
+								<td width="37">3.20
+								</td>
+								<td width="113">语句与控制结构(上)（顺序、分支、循环）
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										语句与注释
+										<LI>
+										输入与输出
+										<LI>
+										程序流程
+										<LI>
+										if语句
+										<LI>
+										case语句
+										<LI>
+											小专题：随机数与计算机模拟&nbsp;
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<LI>
+										练习常用函数（见右边下载的文件）
+										<LI>
+										例4-1,4-2:输入半径,求面积
+										<LI>
+										例4-4:判断闰年
+										<LI>
+										例4-7:自动出题并判分
+										<LI>
+											<span style="BACKGROUND-COLOR: #00ff00">要提交的作业-2:</span>以下三题选做一题：
+										<LI>
+											<span style="BACKGROUND-COLOR: #ffff00">1.</span>进一步读懂例题“自动出题并判分”中的内容，并进行几点改进：（1）加上一种乘方运算（2）增加对题目的有效性的检查：如果题目中出现了减数大于被减数的情况，则弹出一个消息框"机器出了一道难题!"。(3)将正确与否的判断由“是否相等”改为“是否大致相等”，即用户填的值与正确值之间的差的绝对值是否如果小于0.01，即认为是正确的。使用abs(...)表示绝对值（4）加上适当的汉字注释。(5)可以实现一个自动提示的功能。(6)如果可以话，使用Timer事件机制，让它“自动”出题，使用Text1_Change事件“自动”判分（当有正确的答案输入时显示正确，不正确时则不显示）。
+										<LI>
+											<span style="BACKGROUND-COLOR: #ffff00">2.</span>一个猜数游戏。机器随机出一个数，请用户猜，如果用户输入的值大了，则显示“你猜大了”，小了则显示“你猜小了”，若相等，则弹出信息“恭喜你答对了”，并重新产生一个随机数。注意定义变量的位置（如果是要一直保留的变量，请定义到所有的Sub之前，即程序的最前面）。
+										<LI>
+											<span style="BACKGROUND-COLOR: #ffff00">3.</span>与机器玩一个石头、剪刀、布的游戏。
+										</LI>
+									</UL>
+								</td>
+								<td width="159">
+									<p><A href="vbLab/week04.zip">讲义、示例下载</A></p>
+									<p><A href="vbLab/st2011w4.rar">几个同学做的示例</A></p>
+									<p>第4章1-2节内容及习题</p>
+									<p></p>
+								</td>
+							</tr>
+							<tr>
+								<td width="22">5&nbsp;<a name="w5"></a>
+								</td>
+								<td width="37">3.27
+								</td>
+								<td width="113">语句与控制结构(中）（循环）
+									<p>&nbsp;</p>
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										程序的三种结构
+										<LI>
+										for语句
+										<LI>
+										do while语句
+										<LI>
+										循环的五要素
+										<LI>
+											<P>小专题：绘图</P>
+											&nbsp;
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<LI>
+										例4-9:求1+2+3+...+100
+										<LI>
+										例4-10:同心圆
+										<LI>
+										例4-11:ASCII表
+										<LI>
+										例4-15:角谷猜想
+										<LI>
+										例4-16:九九表
+										<LI>
+										例4-18:数列求和
+										<LI>
+										例5-8:字符串的加密
+										<LI>
+										例8-4:函数绘图
+										<LI>
+											<span style="BACKGROUND-COLOR: #00ff00">要提交的作业-3:</span>绘图以下极坐标图形： r = 3Sin(θ) 
+											+ 3.5 Cos(10θ) Cos(8θ) 要注意Scale的设置，建议如下:Scale (-5, 10)-(5, -5)。要求使用循环。 
+											如果你对极坐标不了解，也可以画出其他图形（如画一个笑脸、小车、房子等等）。要求使用循环。
+										</LI>
+									</UL>
+								</td>
+								<td width="159"><A href="vbLab/week05.zip">讲义、示例下载</A>
+									<p>第4.3及8.1节内容及习题</p>
+								</td>
+							</tr>
+							<tr>
+								<td width="22">6&nbsp;<a name="w6"></a></td>
+								<td width="37">4.3</td>
+								<td width="113">语句与控制结构(下）（循环续)</td>
+								<TD width="177">&nbsp;
+									<LI>
+									exit语句
+									<LI>
+									循环的嵌套
+									<LI>
+										小专题：加密与安全</LI></TD>
+								<td width="377">
+									<LI>
+										<SPAN style="BACKGROUND-COLOR: #00ff00">要提交的作业-4:</SPAN>请参照字符串加密（<A href="vbLab/str_encrypt.rar">这里下载</A>）的例子，编写一段更复杂的加密程序。具体加密办法由你自己定，（为了练习的方便 
+										，可以不考虑解密成功与否），要求在程序中用注释的方式描写清楚你的加密办法，并用程序来实现这个加密方法。（例如，你可以考虑第1、3、5、7等位置上的字母进行一种变换，而2、4、6等位置上的字母进行另一种变换，你也可以每两个字母一组进行变换，你还可以将字符串从后到前进行处理。还可以在变换时，不用像例子中用固定的数2，而让用户输入一个数，作为“密码”)。希望看到你的创意。你也可以考虑实现莫尔斯电报码。<FONT color="#ff6600">要求要程序中用中文或英文注释的方式描写清楚你的计算方法</FONT>
+									。
+									<LI>
+										<SPAN style="BACKGROUND-COLOR: #00ff00">作业也可以是：</SPAN>写一篇介绍密码、加密、安全的知识的小文章。
+									</LI>
+								</td>
+								<td width="159">
+									<P>讲义、示例下载(同上）&nbsp;</P>
+									<P>观摩：<BR>
+										<A href="vbLab/good2010-123.rar"><b>上上届作业选集</b><BR>
+											<A href="vbLab/good2011-123.rar"><b>上届同学前3次优秀作业选集</b><BR>
+												<A href="vbLab/good2012-123.rar"><b>本届同学前3次优秀作业选集</b><BR>
+													<!--A href="vbLab/good2.rar">第2次优秀作业选集</A><BR>
+										<A href="vbLab/good3.rar">第3次优秀作业选集<BR-->
+												</A>（注;这里选择部分有代表性的作业，供大家借鉴，版权归原作者所有。由于优秀作业很多，这里只能选择其中一小部分。）（如果有不愿放在网上的，请email说明。）</P>
+								</td>
+							</tr>
+							<tr>
+								<TD width="22">7&nbsp;<a name="w7"></a>
+								</TD>
+								<TD width="37">
+									<P>4.10</P>
+									<P>&nbsp;</P>
+								</TD>
+								<td width="113">过程与函数
+									<p>&nbsp;</p>
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										过程与函数
+										<LI>
+										参数传递&nbsp;&nbsp;
+										<LI>
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<LI>
+										例5-1:延时程序
+										<LI>
+										例5-2:传值与传址
+										<LI>
+										例5-5:屏幕上运动的小球
+										<LI>
+										例5-7:2-100内的素数
+										<LI>
+											上周作业没交的同学，请继续完成。
+											<SPAN style="BACKGROUND-COLOR: #00ff00">要提交的作业-5:使用过程与函数</SPAN>：编写一个程序，要求使用过程与函数，可以将以前的程序（如绘图或出题等程序）改编一下，使用过程及函数来进行任务分解及代码重用，以简化程序。或者做下面的程序：关于发出声响有很多办法，其中一种是：可以在最前面加上一句Private 
+											Declare Function Beep Lib "kernel32" (ByVal dwFreq As Long, ByVal dwDuration As 
+											Long) As Long 这是一个外部定义好的函数，在程序中可以这样调用： Beep 880,300 两个参数分别表示频率及时长，例如可以参考<a href="vbLab/Beep_Song.rar">这个程序</a>。
+										<LI>另，助教老师斯文骏编写了一个异步的Beep DLL，可以让同学们比较方便地写一些像电子琴那样的应用。使用方法：
+<br>AsyncBeep Freq：以指定频率发声（最长2min）
+<br>AsyncBeep 0：停止发声
+<br><a href="vblab/AsBeeper.rar">附件</a>里是VC6的代码（为了兼容XP）和VB6的测试程序。
+										</LI>
+									</UL>
+								</td>
+								<td width="159"><A href="vbLab/week06.zip">讲义、示例下载</A>
+									<p>第5章、6.2节内容及习题</p>
+								</td>
+							</tr>
+							<TR>
+								<TD width="22">8<a name="w8"></a></TD>
+								<TD width="37">4.17</TD>
+								<TD width="113">
+									<P>数组</P>
+								</TD>
+								<TD width="177">
+									<UL>
+										<LI>
+										<LI>
+										变量的作用域
+										<LI>
+											数组的概念及定义
+										</LI>
+									</UL>
+								</TD>
+								<TD width="377">
+									<LI>
+									例6-1:求数组的最大值、平均值
+									<LI>
+									选择排序(课上的例子)
+									<LI>
+									例8-1:金刚石图案
+									<LI>
+										<SPAN style="BACKGROUND-COLOR: #00ff00">要提交的作业-6:可以是“体育彩票36选7”</SPAN>：程序模拟体育彩票中从随机选出7个数(每个数位于1-36之间)。要求<SPAN style="BACKGROUND-COLOR: #00ff00">1</SPAN>：在程序中定义一个数组，放到程序最前面；<SPAN style="BACKGROUND-COLOR: #00ff00">2</SPAN>：建立一个Sub，其中使用随机数函数和循环来实现选数的过程；<SPAN style="BACKGROUND-COLOR: #00ff00">3</SPAN>：建立一个Sub，将数组显示出来，可以用Print或文本框、标签等方式；<SPAN style="BACKGROUND-COLOR: #00ff00">4</SPAN>.使用一个命令按钮，来调用以上两个过程；<SPAN style="BACKGROUND-COLOR: #00ff00">5</SPAN>
+										.编写一个Function用于求阶乘；<SPAN style="BACKGROUND-COLOR: #00ff00">6.</SPAN>使用一个命令按钮，调用以上Function并求获奖的概率的倒数：36!/7!/(36-7)!。当然，你也可以编写类似的程序，但要求用到数组、循环、自定义Function等。
+									<LI>
+										<SPAN style="BACKGROUND-COLOR: #00ff00">也可以编一个统计程序</SPAN>：定义一个有100个元素的数组，其中每个元素存入随机数(rnd+rnd+rnd+rnd+rnd+rnd)/6统计这个数组中所有数的平均值，最大值，最小值，大于0.5的元素占百分之几，标准方差（标准方差的公式请用网络自己搜索）。&nbsp;
+									</LI>
+								</TD>
+								<TD width="159"></TD>
+							</TR>
+							<TR>
+								<td width="22">&nbsp;<a name="w9"></a> &nbsp;9
+								</td>
+								<td width="37">&nbsp;4.24
+								</td>
+								<td width="113">控件
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										标签
+										<LI>
+										文本框
+										<LI>
+										图片框
+										<LI>
+										图像框
+										<LI>
+										命令按钮
+										<LI>
+										复选框
+										<LI>
+										单选按钮
+										<LI>
+										列表框
+										<LI>
+										组合框
+										<LI>
+										滚动条
+										<LI>
+										直线
+										<LI>
+										形状
+										<LI>
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<li>
+										<LI>
+										一些控件的常用属性与方法
+										<LI>
+										TextBox选定
+										<LI>
+										按钮的图片
+										<LI>
+										CheckBox_Option
+										<LI>
+										Combo_List
+										<LI>
+										Label_mouse_over
+										<LI>
+										图片浏览器
+										<LI>
+										用控件表示职员的信息
+										<LI>
+										例7-5进度条
+										<LI>
+											<SPAN style="BACKGROUND-COLOR: #00ff00">要提交的作业-7(注意：本次作业跨两周的时间，本周可以先做，下一周做好以后再交）:</SPAN>自选一个主题（有关学习、生活、娱乐等多方面），制作一个程序(可以是屏幕保护程序的形式，也可以不是），其中可以含有图片移动、切换效果、有多媒体功能或者多窗体+菜单程序。程序中若使用图片，尽量不要在设计时选择图片名（因为有可能在老师的机器上打不开），而用“粘贴图片信息”或在运行时使用LoadPicture。图片文件、多媒体文件所占空间不能太大，作业压缩后不要超过5M。
+										</LI>
+									</UL>
+								</td>
+								<TD width="159"><A href="vbLab/week07.zip">讲义、示例下载</A>
+									<p>第7章内容及习题</p>
+									<!--P>观摩：<BR>
+										<A href="vbLab/good2012-456.rar"><b>本届第4、5、6次优秀作业选集</b></A><BR>
+										&nbsp;<BR>
+										<A href="vbLab/good2011-45.rar"><b>上一届第4、5次优秀作业</b></A><BR>
+										<BR>
+										<A href="vbLab/good2010-45.rar"><b>上上届的优秀作业</b></A><BR>
+									</P-->
+								</TD>
+							</TR>
+							<tr>
+								<td width="22"><a name="w11"></a>&nbsp;11&nbsp;
+								</td>
+								<td width="37">&nbsp;5.8
+								</td>
+								<td width="113">
+									外部控件
+									<P>多媒体编程
+									</P>
+									<P>窗体
+									</P>
+									<P>菜单
+									</P>
+									<P>控件数组
+									</P>
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+											音频/视频的播放：使用Windows Media Player控件<BR>
+										<font color="red">Me.WindowsMediaPlayer1.URL = App.Path & "\a.mp3"</font>
+										<LI>
+											gif动画、Flash动画、网页的播放或显示<BR>
+											使用Microsoft Internet Control控件<BR>
+										<font color="red">Me.WebBrowser1.Navigate App.Path & "\a.htm"</font>
+										<LI>
+										窗体的属性/方法/事件
+										<LI>
+										多窗体
+										<LI>
+										控件数组
+										<LI>
+											菜单 
+											<!--LI>
+								工具条(了解即可）
+								<LI>
+									MDI程序(了解即可）
+								</LI--></LI></UL>
+								</TD>
+								<td width="377">
+									<UL>
+
+										<LI>
+											<B>继续学习上一周的内容，上次作业可推迟到下周提交</B>
+										<LI>
+											<font color="red">写一封email给唐老师<A href="mailto:dstang2000@263.net">dstang2000@263.net</A>谈谈你对这门课的意见、建议、想法或要求。</font>
+										<LI>
+											<!--B>下次课愿意来讲自己的程序的同学也请给我发邮件说明一下</B-->
+										<LI>
+										Form_屏保程序
+										<LI>
+										Form_Resize_Paint
+										<LI>
+										使用多重窗体
+										<LI>
+										使用菜单
+										<LI>
+										第8章的内容及习题
+										<LI>
+										按钮数组
+										<LI>
+										用六个滚动条控制渐变色
+										<LI>
+										<LI>
+										例13-5:使用Windows Media Player控件
+										<LI>
+										例14-1:使用Microsoft Internet Control控件WebBrowser控件
+										<LI>
+										<!--使用通用对话框Microsoft Common Dialog Control&nbsp;-->
+										<LI>
+										<LI>
+										阅读理解:排块游戏(见下载文件中)
+										<LI>
+											阅读理解:连连看(见下载文件中)
+										</LI>
+										<LI>
+										
+									</UL>
+								</td>
+								<td width="159">
+									<P>&nbsp;</P>
+									<P><!--A href="vbLab/good5.rar"><A href="vbLab/good5.rar">第5次优秀作业选集</A--></P>
+									<P><A href="vbLab/week08.zip">讲义、示例下载</A>
+									</P>
+									<p>第8章内容及习题</p>
+									<P>注：由于版本的原因，在使用带外部控件的示例时，要注意：（1）打开vbp文件而不是直接打开frm文件；(2)如果控件不兼容，控件会变成一个图片框的样子，可以在界面上去掉它，然后重新加上你机器上的相应控件。</P>
+									<p>如果控件提示没有许可证，可以运行<a href="vbLab/vb6ControlLicence.rar">这个软件</a></p>
+									另，助教老师斯文骏编写了一个使用MCI来播放音乐的例子，有兴趣的同学可以参考<a href="vbLab/MCI_play.rar">这个文件</a>
+								</td>
+							</tr>
+							<tr>
+								<td width="22">&nbsp;<a name="w12"></a> 12
+								</td>
+								<td width="37">&nbsp;5.15
+								</td>
+								<td width="113">
+									<P></P>
+									<P>API
+									</P>
+									<P>程序的调试
+									</P>
+									<P>文件</P>
+								</td>
+								<TD width="177">
+									<UL>
+										<li>
+										使用API(了解概念和使用方法，不要求记住具体的函数）
+										<LI>
+										断点/跟踪/监视
+										<li>
+										文件的种类
+										<li>
+											文件的打开/读写/关闭
+										</li>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<LI>
+										例12-3:Topmost窗口:使用API(了解）
+										<LI>
+										<!--例13-1:使用sndPlaySound播放声音（了解）-->
+										<LI>
+										断点F9/跟踪F8/监视(View/WatchWindow)
+										<LI>
+										例9-1:文件的复制
+										<LI>
+										</LI>
+									</UL>
+								</td>
+								<td width="159">
+									<br>
+									<A href="vbLab/week09.zip">api 讲义、示例下载</A>
+									<br>
+									<A href="vbLab/week10.zip">文件 讲义、示例下载</A>
+									<br>
+									<br>
+									附：<A href="vbDoc/doc_API_GUIDE_english.zip">Win32API说明与示例</A>
+									<br>
+									附：<A href="vbDoc/WIN32API.chm">Win32API说明(中文)</A>
+									<br>
+									<br>
+									补充：<A href="vbLab/FileCopy_addLineNum.zip">文本文件读写</A>
+									<br>
+									补充：<A href="vbLab/bdc_textfile.rar">背单词</A>
+									<br>
+									补充：<A href="vbLab/lyrics.rar">歌词播放</A>
+									<br>
+									补充：<A href="vbLab/lyrics-adv.rar">改进（针对一行多个时间）</A>
+									<br>
+									补充：<A href="vbLab/GetSetSetting.rar">设置Setting</A>
+									<br>
+									补充：<A href="vbLab/pic-mosaic.rar">图像马赛克</A> 
+									<!--p>补充：<A href="http://2xvision.blog.163.com/blog/static/2180337320099106458339/">《调程序的小女孩》（感谢成柄潇同学的推荐）</A-->
+									<P></P>
+									<p>
+										<br>
+										第10、9章的内容及习题
+										<br>
+										第12、13章内容及习题</p>
+								</td>
+							</tr>
+
+							<tr>
+								<td width="22">&nbsp;<a name="w12"></a>
+								</td>
+								<td width="37">
+								</td>
+								<td width="113">
+									<p>Exccel中的宏与VBA</p>
+									<P>&nbsp;</P>
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										VBA自定义函数
+										<LI>
+										VBA中访问Excel对象
+										<LI>
+										VBA建立用户窗体
+										<LI>
+											使用Excel中按钮及worksheet的事件
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<ul>
+										<LI>
+										请参考下载的示例
+										<LI>
+										例16-3：用VBA编写Word、Excel中的宏
+										<LI>
+											<span style="BACKGROUND-COLOR: #00ff00">要提交的作业-8(注意：本次作业可以跨三周的时间）:</span>用Excel或Word编写的VBA程序（按Alt+F11可打开），可以实现数据计算、信息记录、界面显示等功能。自选一个主题（有关学习、生活、娱乐等多方面），制作一个程序(可以是“背单词”、“资料管理”、统计文章中的字词出现频率、统计计算一个数据文件中的所有数据、生成“梨花体诗句”或其他形式。
+
+										<LI>
+											<font color="red">可提前复习（参见第16周的下载资料）</font>
+										</LI>
+									</ul>
+								</td>
+								<td width="159">
+									<p>16.2节中的内容&nbsp;</p>
+									<a href="vbLab/vb_excel_2.rar">新: Excel函数示例、参考下载</a> 
+									<!--p><A href="vbLab/week13.zip">以前的讲义及示例下载</A></p-->
+									<P></P>
+									<!--A href="asp_jy.zip">网页及ASP讲义及示例</A--> &nbsp; 
+									<!--
+									<P><span style="BACKGROUND-COLOR:yellow">观摩</span>
+										<a href="vbLab/good2011-6.rar">第6次部分优秀作业</a>
+									<p>
+										<a href="vbLab/good2011-7.rar">第7次部分优秀作业</a>
+									</p>
+									<a href="vbLab/good2010-6.rar">上届第6次优秀作业</a>
+									<p>
+										<a href="vbLab/good2010-7.rar">上届第7次优秀作业</a>
+									</p>
+									<P>&nbsp;</P>-->
+									<!--P>观摩：<BR>
+										<A href="vbLab/good2010-8.rar"><b>上届部分vba作业供参考</b></A></P-->
+								</td>
+							</tr>
+							<tr>
+								<td width="22">13&nbsp;<a name="w13"></a>
+								</td>
+								<td width="37">5.22
+								</td>
+								<td width="113">Excel函数及深入应用
+								</td>
+								<TD width="177">
+									<UL>
+										<LI>
+										Excel常用函数
+										<LI>
+											小专题：IC卡、条码&nbsp;
+										</LI>
+									</UL>
+								</TD>
+								<td width="377">
+									<UL>
+										<LI>
+										Excel常用函数及与VB函数的对比
+										<LI>
+											阅读理解并跟踪调试:新旧身份证号码的转换
+										</LI>
+									</UL>
+								</td>
+								<td width="159">
+									<a href="vbLab/vba_ExactDataFromManyFiles.rar">补充：从多个文件中抽取取数据</a> 
+								    
+									<!--a href="vbLab/vb_excel.rar">Excel函数示例、参考下载</a--> 
+									<!--A href="vbLab/week11.zip">以前的讲义、示例下载</A-->
+									<p>第15章的内容及习题</p>
+									<P></P>
+								</td>
+							</tr>							<tr>
+								<td width="22">14&nbsp;<a name="w14"></a>
+								</td>
+								<td width="37">5.29&nbsp;
+								</td>
+								<td width="113">常用算法
+								</td>
+								<TD width="177">
+									<ul>
+										<li>
+										遍试
+										<li>
+										迭代
+										<li>
+											递归
+										</li>
+									</ul>
+								</TD>
+								<td width="377">
+									<ul>
+										<li>
+										例6-5:完全数
+										<li>
+										例6-6:水仙数
+										<li>
+										例6-7:求平方根
+										<li>
+										例6-9:求阶乘
+										<li>
+										例6-10:求菲波那契数列
+										<li>
+											例6-12:Caley树
+										<li>
+										<A href="http://weike.enetedu.com/play.asp?vodid=150233"><font color=red><b>唐老师录制的一段“微课”视频，请同学们点评</b></font></A>
+										<li>关于在VBA中使用Timer，可以这样：
+										<br>插入“模块”，在其中写以下函数：<pre>
+Sub RunTimer1()
+   If timer1_Enabled Then Timer1_Timer
+   Application.OnTime Now + TimeValue("00:00:01"), "RunTimer1", , True
+End Sub
+其中timer1_Enabled是一个Public变量，根据需要置成true或false.
+Timer1_Timer是一个sub，其中是每隔一秒钟所完成的任务.
+可以在适当的地方调用RunTimer1。
+</pre>
+										
+										</li>
+										
+									</ul>
+								</td>
+								<td width="159">
+									<P><A href="vbLab/week15.zip">示例下载</A></P>
+									<P>&nbsp;<A href="vbLab/vb.ppt">全部ppt讲义下载</A>
+									</P>
+									<p>第6章的内容及习题</p>
+								</td>
+							</tr>
+							<tr>
+								<td width="22">15&nbsp;<a name="w15"></a>
+								</td>
+								<td width="37">6.5
+								</td>
+								<td width="113">复习
+								</td>
+								<TD width="177"></TD>
+								<td width="377"><br>
+								</td>
+								<td width="159"><A href="vbLab/vb.ppt">全部ppt讲义下载</A>
+									<!--p><A href="vbLab/vbdg2.doc" target="_blank">章节目录(红色部分不要求)</A></p-->
+									<p><A href="vbLab/vbpoint.doc" target="_blank">有关复习与考试的说明</A><span style="BACKGROUND-COLOR:yellow">(有更新，请重点查看）</span></p>
+									<p><A href="vbLab/ControlsAndFunctions.doc" target="_blank">附：控件与函数的列表(供参考)</A></p>
+								</td>
+							</tr>
+							<!--TR>
+								<TD width="17">16</TD>
+								<TD width="37">6.16</TD>
+								<TD width="113">
+									(端午节,放假)
+								</TD>
+								<TD width="177"></TD>
+								<TD width="377"></TD>
+								<TD width="159"></TD>
+							</TR-->
+							<tr>
+								<td width="22"><a name="w17"></a>
+								</td>
+								<td width="37"></td>
+								<td width="113">
+								</td>
+								<TD width="177">笔试:<font color="red"><br>
+										6月26日（周三）上午8:30
+										<br>
+										地点： 理教406、408（任选一间） </font>
+									<br>
+								</TD>
+								<td width="377">注：期末成绩占50%,平时作业占50%<A href="vbdg2.doc" target="_blank"></A>
+									<br>
+									<font color="red">答疑</font>：24日（周一）10：30-12:00 地点：理科一号楼1223
+								</td>
+								<td width="159">
+									<!--a href="jfmd2011.xlsx">附：文计大赛加分名单</a-->
+								</td>
+							</tr>
+							<tr>
+								<td width="22"></td>
+								<td width="37"></td>
+								<td width="113"></td>
+								<TD width="177"></TD>
+								<td width="377"></td>
+								<td width="159">
+								</td>
+							</tr>
+							<P></P>
+						</table>
+					<p><br>
+						附：<A href="../cf1">上学期课程网页</A> 附：<A href="../csharp/csharp_intro.htm">《C#程序设计及其应用》课程介绍</A>
+					</p>
+		</center>
+		</FONT> 
+		<!--div style="position:absolute; left:200px; top: 200px; background-color: yellow; width: 500px; height: 200px;" id=divNotice><table width=100% height=100%><tr><td align=left style="color:red">
+		通知：
+		<br>1. 从6月8日起计算中心机房有两周时间不能上机。
+		<br>2. 5月31日（星期一）安排一次答疑，
+		<br>&nbsp;&nbsp;时间下午2：00-5：00，地点：理科一号二层1223E。
+		<br>3. 网上复习资料可提前看。
+		<br>4. 选了部分优秀作业供大家互相学习。请见网上。
+		<br><br><button onclick="document.getElementById('divNotice').style.display='none'">我知道了</button>
+		</div--> 
+		</FONT>
+	</body>
+</html>
